@@ -18,6 +18,30 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link active" href="examples/dashboard.html">
+                            <i class="ni ni-tv-2 text-primary"></i>
+                            <span class="nav-link-text">Color</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="examples/dashboard.html">
+                            <i class="ni ni-tv-2 text-primary"></i>
+                            <span class="nav-link-text">Brand</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{route('category.index')}}">
+                            <i class="ni ni-tv-2 text-primary"></i>
+                            <span class="nav-link-text">Category</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="examples/dashboard.html">
+                            <i class="ni ni-tv-2 text-primary"></i>
+                            <span class="nav-link-text">Product</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="examples/icons.html">
                             <i class="ni ni-planet text-orange"></i>
                             <span class="nav-link-text">Icons</span>

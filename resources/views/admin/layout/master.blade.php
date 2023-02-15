@@ -17,6 +17,7 @@
     <!-- Page plugins -->
     <!-- Argon CSS -->
     <link rel="stylesheet" href="/assets/css/argon.css?v=1.2.0" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @yield('css')
 </head>
 
@@ -54,7 +55,10 @@
                             <div class="dropdown-divider"></div>
                             <a href="#!" class="dropdown-item">
                                 <i class="ni ni-user-run"></i>
-                                <span>Logout</span>
+                                <form action="{{url('/admin/logout')}}" class="d-inline" method="POST">
+                                    @csrf
+                                    <input type="submit" value="Logout" class="border-0">
+                                </form>
                             </a>
                         </div>
                     </li>
@@ -66,6 +70,11 @@
     <!-- Header -->
     <div class="header p-3">
         <div class="card p-2">
+            @if($errors->any())
+                @foreach($errors->all() as $e)
+                    <div class="alert alert-danger">{{$e}}</div>
+                @endforeach
+            @endif
             @yield('content')
         </div>
     </div>
@@ -84,6 +93,28 @@
 <!-- Argon JS -->
 <script src="/assets/js/argon.js?v=1.2.0"></script>
 @yield('script')
+@if(session()->has('error'))
+    <script>
+        Swal.fire({
+            position: 'top-end',
+            icon: 'error',
+            title: '{{session('error')}}',
+            showConfirmButton: false,
+            timer: 1500
+        })
+    </script>
+@endif
+@if(session()->has('success'))
+    <script>
+        Swal.fire({
+            position: 'top',
+            icon: 'success',
+            title: '{{session('success')}}',
+            showConfirmButton: false,
+            timer: 1500
+        })
+    </script>
+@endif
 </body>
 
 </html>
