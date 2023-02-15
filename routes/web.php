@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ColorController;
 use App\Http\Controllers\Admin\BrandController;
+use App\Http\Controllers\Admin\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,4 +34,5 @@ Route::prefix('admin')->group(function (){
    Route::resource('/category',CategoryController::class);
    Route::resource('/color',ColorController::class);
    Route::resource('/brand',BrandController::class);
+   Route::resource('/product',ProductController::class);
 });

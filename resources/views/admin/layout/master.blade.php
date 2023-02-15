@@ -17,8 +17,14 @@
     <!-- Page plugins -->
     <!-- Argon CSS -->
     <link rel="stylesheet" href="/assets/css/argon.css?v=1.2.0" type="text/css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     @yield('css')
+    <style>
+        .select2-selection{
+            height: 45px !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -92,6 +98,8 @@
 <script src="/assets/vendor/chart.js/dist/Chart.extension.js"></script>
 <!-- Argon JS -->
 <script src="/assets/js/argon.js?v=1.2.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 @yield('script')
 @if(session()->has('error'))
     <script>
